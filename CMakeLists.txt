@@ -20,6 +20,8 @@ add_executable(SpaceInvaders main.cpp
         Classes/Engine.h
         Classes/Bullet.cpp
         Classes/Bullet.h
+        Classes/Enemy.cpp
+        Classes/Enemy.h
 )
 
 target_link_libraries(SpaceInvaders PRIVATE raylib)
