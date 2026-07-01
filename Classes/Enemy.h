@@ -5,16 +5,27 @@ struct Enemy {
     Vector2 position{};
     Vector2 velocity{};
 
-    Image enemyImage{};
     Texture2D enemyTexture{};
 
-    int health=100;
+    static constexpr float WIDTH=64.0f;
+    static constexpr float HEIGHT=64.0f;
+    static constexpr float SCREEN_WIDTH=500.0f;
 
-    void Initialize();
+    int health=100;
+    bool alive=true;
+
+    Rectangle GetRect() const {
+        return {
+            position.x,
+            position.y,
+            WIDTH,
+            HEIGHT
+        };
+    }
+
+    void Load();
 
     void Update(float deltaTime);
 
-    void HandleBounds();
-
-    void OnBulletCollision();
+    void Draw() const;
 };

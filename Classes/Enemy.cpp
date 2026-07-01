@@ -4,11 +4,10 @@
 
 #include "Enemy.h"
 
-void Enemy::Initialize() {
-    enemyImage = LoadImage("resources/enemy.png");
-    enemyTexture = LoadTextureFromImage(enemyImage);
+#include "TextureManager.h"
 
-    UnloadImage(enemyImage);
+void Enemy::Load() {
+    enemyTexture=TextureManager::GetTexture("enemy");
 }
 
 void Enemy::Update(const float deltaTime) {
@@ -16,3 +15,8 @@ void Enemy::Update(const float deltaTime) {
     position.y+=velocity.y*deltaTime;
 }
 
+void Enemy::Draw() const {
+    const float scale=WIDTH/enemyTexture.width;
+
+    DrawTextureEx(enemyTexture,position,0.0f,scale, WHITE);
+}

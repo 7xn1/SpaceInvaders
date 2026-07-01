@@ -2,8 +2,9 @@
 
 #include "raylib.h"
 #include "Classes/Engine.h"
+#include "Classes/TextureManager.h"
 
-int main() {
+int main(int argc,char* argv[]) {
     std::cout<<"Loading Game..."<<std::endl;
 
     // Game Runtime //
@@ -19,7 +20,7 @@ int main() {
 
     // Application Close //
 
-    engine.player.Unload();
+    TextureManager::UnloadAll();
 
     CloseWindow();
 

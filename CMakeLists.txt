@@ -22,6 +22,8 @@ add_executable(SpaceInvaders main.cpp
         Classes/Bullet.h
         Classes/Enemy.cpp
         Classes/Enemy.h
+        Classes/TextureManager.cpp
+        Classes/TextureManager.h
 )
 
 target_link_libraries(SpaceInvaders PRIVATE raylib)

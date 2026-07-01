@@ -2,7 +2,7 @@
 
 #include <raylib.h>
 
-void Bullet::Update(float deltaTime) {
+void Bullet::Update(const float deltaTime) {
     position.x+=velocity.x*deltaTime;
     position.y+=velocity.y*deltaTime;
 }

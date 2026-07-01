@@ -3,9 +3,8 @@
 #include <vector>
 
 #include "Bullet.h"
+#include "Enemy.h"
 #include "Player.h"
-
-struct Enemy;
 
 struct Engine {
     const int WIDTH=500;
@@ -15,11 +14,14 @@ struct Engine {
 
     Player player;
     std::vector<Bullet> bullets;
-    std::vector<Enemy> enemys;
+    std::vector<Enemy> enemies;
+
+    Image backgroundImage;
+    Texture2D backgroundTexture;
 
     void Initialize();
 
     void Update();
 
-    void Render();
+    void Render() const;
 };
